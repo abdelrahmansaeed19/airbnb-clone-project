@@ -204,4 +204,60 @@ Relationships:
 
 A review is authored by a user for a specific property.
 
+🔑 Key Security Measures
 
+Authentication
+
+Method: Token-based authentication (e.g., JWT)
+
+Purpose: Verifies the identity of users before allowing access to protected endpoints.
+
+Why It's Important: Prevents unauthorized access to user accounts and personal information.
+
+Authorization
+
+Method: Role-based access control (RBAC)
+
+Purpose: Ensures users can only perform actions they are permitted to (e.g., only hosts can create properties).
+
+Why It's Important: Prevents abuse of functionality and maintains clear boundaries between user roles.
+
+Rate Limiting
+
+Method: API request throttling using tools like Django Ratelimit or Redis-based mechanisms.
+
+Purpose: Limits the number of requests from a user or IP address within a given time.
+
+Why It's Important: Prevents denial-of-service (DoS) attacks and abuse of system resources.
+
+Data Validation and Sanitization
+
+Method: Input validation via serializers and form validation.
+
+Purpose: Ensures incoming data is clean and conforms to expected formats.
+
+Why It's Important: Protects against common attacks like SQL Injection and Cross-Site Scripting (XSS).
+
+Secure Payment Handling
+
+Method: Use of secure third-party payment gateways (e.g., Stripe) with HTTPS and tokenized transactions.
+
+Purpose: Handles financial transactions securely.
+
+Why It's Important: Protects sensitive financial data and ensures trustworthiness of the platform.
+
+HTTPS Enforcement
+
+Method: Enforce HTTPS for all API communication.
+
+Purpose: Encrypts data in transit.
+
+Why It's Important: Prevents eavesdropping and man-in-the-middle (MITM) attacks.
+
+Logging and Monitoring
+
+Method: Log failed login attempts, suspicious activity, and unexpected API usage patterns.
+
+Purpose: Helps detect and respond to potential breaches.
+
+Why It's Important: Enables proactive security incident response.
