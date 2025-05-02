@@ -91,3 +91,117 @@ Features: Post and manage reviews for properties.
 Indexing: Implement indexes for fast retrieval of frequently accessed data.
 
 Caching: Use caching strategies to reduce database load and improve performance.
+
+🗃️ Database Design
+
+1. Users
+
+Represents registered users including both guests and hosts.
+
+Important Fields:
+
+id (Primary Key)
+
+username (Unique)
+
+email (Unique)
+
+password_hash
+
+is_host (Boolean – determines if the user can list properties)
+
+Relationships:
+
+A user can list multiple properties (if is_host is true).
+
+A user can make multiple bookings.
+
+A user can leave multiple reviews.
+
+2. Properties
+
+Represents properties listed by hosts.
+
+Important Fields:
+
+id (Primary Key)
+
+title
+
+description
+
+price_per_night
+
+host_id (Foreign Key to Users)
+
+Relationships:
+
+A property belongs to one host (user).
+
+A property can have multiple bookings.
+
+A property can have multiple reviews.
+
+3. Bookings
+
+Captures reservations made by users for properties.
+
+Important Fields:
+
+id (Primary Key)
+
+property_id (Foreign Key to Properties)
+
+user_id (Foreign Key to Users)
+
+check_in_date
+
+check_out_date
+
+Relationships:
+
+A booking is associated with one user and one property.
+
+A booking may result in one or more payments.
+
+4. Payments
+
+Stores payment transactions related to bookings.
+
+Important Fields:
+
+id (Primary Key)
+
+booking_id (Foreign Key to Bookings)
+
+amount
+
+payment_method
+
+status (e.g., pending, completed)
+
+Relationships:
+
+Each payment is linked to a single booking.
+
+5. Reviews
+
+Captures user feedback on properties.
+
+Important Fields:
+
+id (Primary Key)
+
+user_id (Foreign Key to Users)
+
+property_id (Foreign Key to Properties)
+
+rating (e.g., 1–5 stars)
+
+comment
+
+Relationships:
+
+A review is authored by a user for a specific property.
+
+
