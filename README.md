@@ -261,3 +261,35 @@ Method: Log failed login attempts, suspicious activity, and unexpected API usage
 Purpose: Helps detect and respond to potential breaches.
 
 Why It's Important: Enables proactive security incident response.
+
+⚙️ CI/CD Pipeline
+
+🔄 What is CI/CD?
+
+CI/CD (Continuous Integration and Continuous Deployment/Delivery) is a set of practices that automate the process of testing, building, and deploying code. These pipelines help teams ship code faster and more reliably by integrating changes frequently, testing automatically, and deploying with confidence.
+
+🚀 Why CI/CD is Important for This Project
+
+Automated Testing: Ensures every code change is automatically tested, reducing bugs and increasing reliability.
+
+Consistent Builds: Automatically builds the backend in a consistent and repeatable environment (using Docker).
+
+Faster Deployment: Enables quick and safe deployment to production or staging environments.
+
+Early Bug Detection: Catches integration issues early in the development cycle.
+
+Improved Collaboration: Simplifies merging and reviewing code from multiple contributors.
+
+🛠️ Tools Used
+
+GitHub Actions: Automates testing, linting, and deployment directly from GitHub on every push or pull request.
+
+Docker: Ensures consistent environments across development, testing, and production.
+
+Docker Compose: Manages multi-container environments (e.g., app, database, Redis).
+
+Celery with Redis: Handles background jobs during deployment (e.g., email sending, payment confirmations).
+
+Heroku / AWS / DigitalOcean (optional): Used for live deployment of the backend services.
+
+PostgreSQL: Production-grade relational database used across environments.
