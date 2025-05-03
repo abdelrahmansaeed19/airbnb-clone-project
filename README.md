@@ -204,7 +204,7 @@ Relationships:
 
 A review is authored by a user for a specific property.
 
-🔑 Key Security Measures
+🔑 API Security
 
 Authentication
 
